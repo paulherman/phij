@@ -1,0 +1,17 @@
+@(problems: List[Problem])
+
+@main("Training Area") {
+	@problems.map { problem =>
+		<div class="pure-u-1 content-box">
+			<div class="content-area-usable">
+				<h1>@problem.name</h1>
+				@problem.description
+				<div class="problem-footer">
+					<h5 class="problem-statistics">@problem.tags • @problem.submissions submissions • @problem.solved solved</h5>
+					<a class="pure-button primary-button problem-solve-button" href="@routes.Problem.view(problem.id)">Solve Problem</a>
+				</div>
+			</div>
+		</div>
+	}
+}
+

@@ -1,0 +1,9 @@
+@(problem: Problem)
+
+@main("Training Area - " ++ problem.id.toString) {
+	<div class="content-area pure-u-1">
+		<h1>@problem.name</h1>
+		<h5>@problem.tags • @problem.submissions submissions • @problem.solved solved</h5>
+		@problem.statement
+	</div>
+}
