@@ -14,13 +14,15 @@
 				<div class="nav-inner">
 					<div class="pure-menu pure-menu-open">
 						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Contents</a></li>
-							<li><a href="#">Leaderboard</a></li>
-							<li><a href="#">Training Area</a></li>
+                    		<li class="pure-menu-heading">Menu</li>
+							<li><a href="@routes.User.leaderboard">Leaderboard</a></li>
+							<li><a href="@routes.Problem.list">Training Area</a></li>
 							<li><a href="#">Help</a></li>
 							<li><a href="#">About Us</a></li>
-							<li><a href="#">Logout</a></li>
+                    		<li class="pure-menu-heading">My Account</li>
+							<li><a href="">Profile</a></li>
+							<li><a href="@routes.User.submission">Submissions</a></li>
+							<li><a href="@routes.Application.logout">Logout</a></li>
 						</ul>
 					</div>
 				</div>

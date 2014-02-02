@@ -3,8 +3,19 @@
 # ~~~~
 
 # Home page
-GET		/					controllers.Problem.list
-GET		/problem/:id		controllers.Problem.view(id :Long)
+GET		/							controllers.Problem.list
+GET		/problem/:id				controllers.Problem.view(id : Long)
+POST	/problem/:id				controllers.Problem.submit(id : Long)
+GET		/leaderboard				controllers.User.leaderboard()
+GET		/user/submission			controllers.User.submission()
+GET		/user/submission/:pid		controllers.User.submissionPid(pid : Long)
+
+#Authentication
+GET     /login              		controllers.Application.login
+POST    /login             			controllers.Application.authenticate
+GET     /logout             		controllers.Application.logout
+GET		/signup						controllers.Application.signup
+POST	/signup						controllers.Application.signupDo
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file       controllers.Assets.at(path="/public", file)
+GET     /assets/*file       		controllers.Assets.at(path = "/public", file)

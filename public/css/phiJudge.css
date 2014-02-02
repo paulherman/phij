@@ -97,3 +97,10 @@ a {
 .problem-solve-button {
 	float: right;
 }
+
+.problem-header {
+    padding: 5px;
+    line-height: 35px;
+    background-color: #f8f8f8;
+    border: 1px solid #c2c7d0;
+}
