@@ -1,0 +1,28 @@
+@(submissions: List[Eval])
+
+@main("My Submissions") {
+	<div class="content-area pure-u-1">
+		<table class="pure-table" style="width: 100%;">
+			<thead>
+				<tr>
+					<th style="width: 33%;">Problem</th>
+					<th style="width: 33%;">Test #</th>
+					<th style="width: 33%;">Score</th>
+				</tr>
+			</thead>
+			<tbody>
+			@submissions.map { subm =>
+					@defining(models.Problem.getId(subm.pid)) { problem =>
+					@defining(models.Test.getById(subm.tid).get) { test =>
+						<tr>
+							<td>@problem.name</td>
+							<td>@subm.tid</td>
+							<td>@subm.score / @test.score</td>
+						</tr>
+					}}
+				}
+			</tbody>
+		</table>
+	</div>
+}
+

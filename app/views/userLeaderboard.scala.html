@@ -1,0 +1,25 @@
+@(users: List[User])
+
+@main("Training Area") {
+	<div class="content-area pure-u-1">
+		<table class="pure-table" style="width: 100%;">
+			<thead>
+				<tr>
+					<th style="width: 33%;">#</th>
+					<th style="width: 33%;">Name</th>
+					<th style="width: 33%;">Score</th>
+				</tr>
+			</thead>
+			<tbody>
+			@for((user, i) <- users.zipWithIndex) {
+				<tr>
+					<td>@(i + 1)</td>
+					<td>@user.name</td>
+					<td>@user.score</td>
+				</tr>
+			}
+			</tbody>
+		</table>
+	</div>
+}
+

@@ -1,0 +1,50 @@
+@(form: Form[(String,String,String,String)])
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>phij - Sign Up</title>
+		<link rel="stylesheet" href="@routes.Assets.at("css/pure-min.css")">
+		<link rel="stylesheet" href="@routes.Assets.at("css/phiHome.css")">
+	</head>
+	<body>
+		<div id="layout">
+			<div id="logo"></div>
+			<div id="content">
+				<div id="tabbar">
+					<div class="tab tab-active" style="float: left"><a href="@routes.Application.signup" class="tab-url">Sign Up</a></div>
+					<div class="tab tab-right" style="float: right"><a href="@routes.Application.login" class="tab-url">Login</a></div>
+				</div>
+				<div class="form">
+				@form.globalError.map { error =>
+                	<p class="error">@error.message</p>
+            	}
+					<form action="" method="post" class="pure-form pure-form-aligned">
+					    <fieldset>
+					        <div class="pure-control-group">
+					            <label for="name">Name</label>
+					            <input id="name" name="name" type="text" placeholder="Full Name" value="@form("name").value" required>
+					        </div>
+					        <div class="pure-control-group">
+					            <label for="email">Email Address</label>
+					            <input id="email" name="email" type="email" placeholder="Email Address" value="@form("email").value" required>
+					        </div>
+					        <div class="pure-control-group">
+					            <label for="password">Password</label>
+					            <input id="password" name="password" type="password" placeholder="Password" required>
+					        </div>
+					        <div class="pure-control-group">
+					            <label for="vpassword">Verify Password</label>
+					            <input id="vpassword" name="vpassword" type="password" placeholder="Verify Password" required>
+					        </div>
+					        <div class="pure-controls">
+					        	<button type="submit" class="pure-button pure-button-primary">Sign Up</button>
+					        </div>
+					    </fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

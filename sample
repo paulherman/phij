@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=sample
+Name[en_US]=sample
+Exec=pcmanfm /usr/share/playframework2/samples/scala
+Comment[en_US]=

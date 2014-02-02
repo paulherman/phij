@@ -1,0 +1,49 @@
+@(form: Form[(String,String)])(implicit flash: Flash)
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>phij - Login</title>
+		<link rel="stylesheet" href="@routes.Assets.at("css/pure-min.css")">
+		<link rel="stylesheet" href="@routes.Assets.at("css/phiHome.css")">
+	</head>
+	<body>
+		<div id="layout">
+			<div id="logo"></div>
+			<div id="content">
+				<div id="tabbar">
+					<div class="tab tab-left" style="float: left"><a href="@routes.Application.signup" class="tab-url">Sign Up</a></div>
+					<div class="tab tab-active" style="float: right"><a href="@routes.Application.login" class="tab-url">Login</a></div>
+				</div>
+				<div class="form">
+		            @form.globalError.map { error =>
+		                <p class="error">
+		                    @error.message
+		                </p>
+		            }
+            		@flash.get("message").map{ message =>
+		                <p class="success">
+		                    @message
+		                </p>
+            		}
+					<form action="@routes.Application.authenticate" method="post" class="pure-form pure-form-aligned">
+					    <fieldset>
+					        <div class="pure-control-group">
+					            <label for="email">Email Address</label>
+					            <input id="email" type="email" name="email" placeholder="Email Address" value="@form("email").value" required>
+					        </div>
+					        <div class="pure-control-group">
+					            <label for="password">Password</label>
+					            <input id="password" type="password" name="password" placeholder="Password" required>
+					        </div>
+					        <div class="pure-controls">
+					        	<button type="submit" class="pure-button pure-button-primary">Login</button>
+					        </div>
+					    </fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
